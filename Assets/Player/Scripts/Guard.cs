@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using System;
+
+using Random = UnityEngine.Random;
 
 public class Guard : MonoBehaviour {
 
     public GameObject waypointsHolder;
 
     List<Transform> waypoints = new List<Transform>();
-
-
 
     public float range = 2f;
     public float waitTime = 1f;
@@ -25,16 +26,25 @@ public class Guard : MonoBehaviour {
     static readonly string WALK = "WALK";
     static readonly string ISEEU = "ISEEU";
 
+    AudioSource source;
+    public AudioClip[] clips;
+    // 1 Marche
+    // 2 Spotted
+
+    public event Action ValdoContact;
 
 
     private void Awake() {
+        source = GetComponent<AudioSource>();
+        source.clip = clips[0];
+        source.loop = true;
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
     }
 
     // Start is called before the first frame update
     void Start() {
-
+        
         player = GameObject.FindGameObjectWithTag("Player");
         spotLight = transform.GetChild(0).GetComponent<Light>();
         originalSpotColor = spotLight.color;
@@ -63,6 +73,13 @@ public class Guard : MonoBehaviour {
             spotLight.color = originalSpotColor;
         }
     }
+
+    private void OnTriggerEnter(Collider other) {
+        if (other.CompareTag("Player") && ValdoContact != null) {
+            ValdoContact();
+        }
+    }
+
 
     // return true if the player is in range, is visible and isInAngle
     bool ISEEYOU() {
@@ -124,7 +141,18 @@ public class Guard : MonoBehaviour {
     private float turnSmoothVelocity;
     private float turnSmoothTime = 0.1f;
 
+    void PlayClip(AudioClip clip,float delay = 0f, bool loop = false) {
+        source.loop = loop;
+        source.clip = clip;
+        source.PlayDelayed(delay);
+    }
+
+    public void playSpotted() {
+        PlayClip(clips[1], 0f);
+    }
+
     IEnumerator Patrol(List<Transform> waypoints) {
+        source.Play();
         transform.position = waypoints[0].position;
 
         int index = 0;
@@ -137,7 +165,7 @@ public class Guard : MonoBehaviour {
             if (destination != Vector3.zero) {
                 agent.SetDestination(destination);
                 animator.SetBool(WALK, true);
-
+                source.UnPause();
                 //for (int i = 0; i < agent.path.corners.Length; i++) {
                 //    Vector3 dir = agent.path.corners[i] - transform.position ;
                 //    float targetAngle = Mathf.Atan2(dir.x, dir.z) * Mathf.Rad2Deg;
@@ -149,6 +177,7 @@ public class Guard : MonoBehaviour {
                 //transform.position == waypoints[index].position
                 if (destinationReached) {
                     animator.SetBool(WALK, false);
+                    source.Pause();
                     index = (index + 1) % waypoints.Count;
 
                     yield return new WaitForSeconds(waitTime);

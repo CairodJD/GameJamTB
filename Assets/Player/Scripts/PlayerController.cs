@@ -17,7 +17,13 @@ public class PlayerController : MonoBehaviour {
     private static readonly string hiddenLayer = "Dig";
     private static readonly string endLayer = "Ending";
 
+    AudioSource source;
+    public AudioClip[] clips;
+    // 1 dril
+    // 2 dril out
+
     private void Awake() {
+        source = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
         controller = GetComponent<CharacterController>();
         agent = GetComponent<NavMeshAgent>();
@@ -49,7 +55,10 @@ public class PlayerController : MonoBehaviour {
             NotHidding();
         }
 
+     
         Moovement();
+       
+       
     }
 
 
@@ -104,7 +113,10 @@ public class PlayerController : MonoBehaviour {
     static readonly string WALK  = "WALK";
     static readonly string DIG   = "DIG";
     static readonly string SPROUT = "SPROUT";
+    public float trans = 3f;
 
+  
+  
 
     void Walk(float speed) {
         animator.SetFloat(WALK, speed);
@@ -113,6 +125,18 @@ public class PlayerController : MonoBehaviour {
     void Dig(bool dig = true) {
         animator.SetBool(DIG,dig);
        
+    }
+
+    public void playDrill(bool drillin = true) {
+        AudioClip clip = drillin == true ? clips[0] : clips[1];
+        source.loop = false;
+        source.PlayOneShot(clip);
+    }
+
+    public void playDirt(bool drillin = true) {
+        AudioClip clip = drillin == true ? clips[2] : clips[3];
+        source.loop = false;
+        source.PlayOneShot(clip);
     }
 
     public bool isInState(string state) {
