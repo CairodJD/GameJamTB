@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour {
     int defaultLayer;
 
     private static readonly string hiddenLayer = "Dig";
+    private static readonly string endLayer = "Ending";
 
     private void Awake() {
         animator = GetComponent<Animator>();
@@ -25,20 +26,23 @@ public class PlayerController : MonoBehaviour {
 
     private void Start() {
         //agent.enabled = true;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
-    private void Update() {
-
-       
-
+    private void Update() {     
         //HIDING or na
         if (Input.GetKey(KeyCode.Mouse0)) {
 
-            if (agent.enabled == true && IsOn(hiddenLayer)) {
-
-                //Debug.Log(" je me cache / animation de creusage tu sais deja");
-                Hidding();
-            }
+            if (agent.enabled == true) {
+                if (IsOn(hiddenLayer)) {
+                    //Debug.Log(" je me cache / animation de creusage tu sais deja");
+                    Hidding();
+                } else if (IsOn(endLayer)) {
+                    GameManager.instance.NextLevel();
+                }
+               
+            } 
             
         } else {
             //Debug.Log("JETAIS CACHE");

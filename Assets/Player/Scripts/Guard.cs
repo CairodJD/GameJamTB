@@ -53,9 +53,11 @@ public class Guard : MonoBehaviour {
     void Update() {
 
         if (ISEEYOU()) {
-            animator.SetTrigger(ISEEU);
+            animator.SetTrigger(ISEEU);         
             // end GAME
             spotLight.color = Color.red;
+            
+            StartCoroutine(GameManager.instance.ValdoSpotted());
         } else {
             //print("nein");
             spotLight.color = originalSpotColor;
