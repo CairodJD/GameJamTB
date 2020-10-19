@@ -7,12 +7,12 @@ public class DigSM : StateMachineBehaviour
 {
     PlayerController player;
     float ms;
-    Transform skin;
+    
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-        skin = player.transform.GetChild(0);
-        //skin.gameObject.SetActive(false);
+        
+        
         ms = player.movespeed;
         player.movespeed = 0;
         player.setAgent(false);
@@ -32,6 +32,7 @@ public class DigSM : StateMachineBehaviour
         player.setAgent(true);
         player.playDrill(false);
         player.playDirt(false);
+        player.DigRendererEvent(1);
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

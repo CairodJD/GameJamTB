@@ -1,0 +1,289 @@
+fileFormatVersion: 2
+guid: 74a0fcc39b2461b428485246e69b2a67
+ModelImporter:
+  serializedVersion: 19301
+  internalIDToNameTable:
+  - first:
+      74: -4182271085682893947
+    second: Valdo_dig07
+  externalObjects: {}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Valdo_dig07
+      takeName: Valdo_dig07
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 25
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 1
+        functionName: DigRendererEvent
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: f2078f8b7b7d5d04fb19263ee42dbaef,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton:
+    - name: Player(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Valdo_patteav_D
+      parentName: Player(Clone)
+      position: {x: 0.18312499, y: 0.15601125, z: 0.14261721}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Valdo
+      parentName: Player(Clone)
+      position: {x: -0, y: 0.20351125, z: 0.000000019667368}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Valdo_pattear_D
+      parentName: Player(Clone)
+      position: {x: -0.01375, y: 0.21640188, z: 0.034335956}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Valdo_pattear_G
+      parentName: Player(Clone)
+      position: {x: -0.186875, y: 0.1411675, z: -0.09468748}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Valdo_patteav_G
+      parentName: Player(Clone)
+      position: {x: 0.0290625, y: 0.24101125, z: 0.03732424}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ctrl_head
+      parentName: Player(Clone)
+      position: {x: -0.0019862843, y: 0.3433965, z: 0.0053401957}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Circle010
+      parentName: Ctrl_head
+      position: {x: -0.003986717, y: 0.00073636736, z: -0.25585338}
+      rotation: {x: 0.013694495, y: -0.031567425, z: -0, w: 0.9994079}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ctrl_toupie
+      parentName: Circle010
+      position: {x: -0, y: 0, z: 0.1335018}
+      rotation: {x: 0, y: 0, z: 0.3007055, w: 0.95371705}
+      scale: {x: 1.570825, y: 1.570825, z: 1.570825}
+    - name: Bone_Valdo_patteav_D
+      parentName: Circle010
+      position: {x: 0.09079863, y: -0.081619315, z: 0.17718501}
+      rotation: {x: -0.1300327, y: -0.6829933, z: 0.71610135, w: 0.06172946}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1}
+    - name: Bone026
+      parentName: Bone_Valdo_patteav_D
+      position: {x: -0.11028261, y: -0.000000095367426, z: -0.000000007152557}
+      rotation: {x: -0.12913007, y: -0.12588622, z: -0.09625854, w: 0.97888327}
+      scale: {x: 1, y: 1.0000005, z: 1}
+    - name: Bone027
+      parentName: Bone026
+      position: {x: -0.273058, y: -0.000000019073486, z: 0.00000006198883}
+      rotation: {x: -0.0000000054860743, y: -0.000000020489102, z: 0.000000058207675,
+        w: 1}
+      scale: {x: 0.99999976, y: 0.9999994, z: 1}
+    - name: Bone_Valdo_pattear_D
+      parentName: Circle010
+      position: {x: 0.101420715, y: 0.04399795, z: 0.17446722}
+      rotation: {x: -0.48619893, y: 0.51854306, z: 0.6742261, w: 0.2003571}
+      scale: {x: 1.0000006, y: 0.99999976, z: 1.0000006}
+    - name: Bone029
+      parentName: Bone_Valdo_pattear_D
+      position: {x: -0.11104551, y: -0.000000019073486, z: -0.0000000166893}
+      rotation: {x: -0.014369143, y: 0.0035032327, z: 0.79305184, w: 0.60897464}
+      scale: {x: 1.0000002, y: 1.0000007, z: 1.0000006}
+    - name: Bone030
+      parentName: Bone029
+      position: {x: -0.27248544, y: 0, z: 0.00000004649162}
+      rotation: {x: -0.018091569, y: 0.008213854, z: -0.0039220224, w: 0.9997949}
+      scale: {x: 0.9999998, y: 1.0000006, z: 0.9999998}
+    - name: Bone_Valdo_pattear_G
+      parentName: Circle010
+      position: {x: -0.10608115, y: 0.04867687, z: 0.16833642}
+      rotation: {x: 0.675736, y: -0.27494317, z: 0.13641971, w: -0.6702066}
+      scale: {x: 0.9999999, y: 1.0000005, z: 1.0000005}
+    - name: Bone032
+      parentName: Bone_Valdo_pattear_G
+      position: {x: -0.1211865, y: 0.000000038146972, z: 0.000000057220458}
+      rotation: {x: 0.02929404, y: 0.015288858, z: -0.8249443, w: 0.5642473}
+      scale: {x: 0.99999994, y: 0.9999998, z: 0.99999994}
+    - name: Bone033
+      parentName: Bone032
+      position: {x: -0.26493302, y: 0.000000114440915, z: 0.000000009536743}
+      rotation: {x: 0.0632665, y: 0.03272879, z: 0.017726617, w: 0.99730235}
+      scale: {x: 0.99999964, y: 0.99999994, z: 1.0000001}
+    - name: Bone_Valdo_patteav_G
+      parentName: Circle010
+      position: {x: -0.08867599, y: -0.08218667, z: 0.17722912}
+      rotation: {x: 0.6837222, y: 0.15636137, z: 0.07060118, w: 0.70928884}
+      scale: {x: 1.0000002, y: 1, z: 0.9999999}
+    - name: Bone016
+      parentName: Bone_Valdo_patteav_G
+      position: {x: -0.1027843, y: -0.000000076293944, z: -0.000000026226044}
+      rotation: {x: 0.21456946, y: -0.15146142, z: 0.060120158, w: 0.9630187}
+      scale: {x: 1.0000001, y: 1.0000004, z: 0.9999999}
+    - name: Bone017
+      parentName: Bone016
+      position: {x: -0.26615435, y: 0, z: 0.000000069141386}
+      rotation: {x: 0.00000010026271, y: -9.3131985e-10, z: 0.00000002980233, w: 1}
+      scale: {x: 0.9999997, y: 0.9999999, z: 1.0000002}
+    - name: Object003
+      parentName: Ctrl_head
+      position: {x: -0.0023913996, y: -0.0042826068, z: -0.122281075}
+      rotation: {x: 0.7071108, y: -0.7071027, z: -0.00000009415624, w: 0.000000094157684}
+      scale: {x: 1.9586864, y: 1.9756811, z: 1.1903367}
+    - name: Object004
+      parentName: Object003
+      position: {x: -0.0012158203, y: 0.0018603517, z: 0.06644897}
+      rotation: {x: -0.000000069509746, y: 0.00000008677765, z: -0.7372833, w: 0.6755837}
+      scale: {x: 1, y: 0.9999999, z: 0.99999994}
+    - name: Bone_valdo
+      parentName: Ctrl_head
+      position: {x: -0.009298075, y: 0.0053401864, z: -0.10807792}
+      rotation: {x: 0.49312523, y: 0.50678146, z: -0.50678265, w: 0.4931241}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000001}
+    - name: Bone019
+      parentName: Bone_valdo
+      position: {x: -0.2453653, y: 0.00000006318092, z: 0.0000000040850043}
+      rotation: {x: 4.521665e-14, y: -0.000000003026799, z: -0.000000028871, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ctrl_general
+      parentName: Player(Clone)
+      position: {x: -0.0041501815, y: 0, z: 0.0015561099}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: IK Chain005
+      parentName: Player(Clone)
+      position: {x: 0.18055388, y: 0.0027103615, z: 0.14577177}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: IK Chain006
+      parentName: Player(Clone)
+      position: {x: 0.18408582, y: 0.0019021105, z: -0.08725862}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: IK Chain007
+      parentName: Player(Clone)
+      position: {x: -0.1695654, y: 0.00093770976, z: -0.08479994}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: IK Chain008
+      parentName: Player(Clone)
+      position: {x: -0.146027, y: -0.0001206398, z: 0.10884092}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 991454c80e445d4459a23a3361bdc464,
+    type: 3}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

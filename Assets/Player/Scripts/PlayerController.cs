@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using System;
 
 public class PlayerController : MonoBehaviour {
 
@@ -13,7 +14,7 @@ public class PlayerController : MonoBehaviour {
     CharacterController controller;
     NavMeshAgent agent;
     int defaultLayer;
-
+    Transform skin;
     private static readonly string hiddenLayer = "Dig";
     private static readonly string endLayer = "Ending";
 
@@ -28,6 +29,7 @@ public class PlayerController : MonoBehaviour {
         controller = GetComponent<CharacterController>();
         agent = GetComponent<NavMeshAgent>();
         defaultLayer = gameObject.layer;
+        skin = transform.GetChild(0);
     }
 
     private void Start() {
@@ -105,6 +107,11 @@ public class PlayerController : MonoBehaviour {
         Dig(false);
        
         gameObject.layer = defaultLayer;
+    }
+
+    //remove renderer at the end of anim
+    public void DigRendererEvent(int tkt) {
+        skin.gameObject.SetActive(Convert.ToBoolean(tkt));
     }
 
     #region AnimationControler

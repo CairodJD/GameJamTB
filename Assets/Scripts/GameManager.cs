@@ -56,7 +56,11 @@ public class GameManager : MonoBehaviour {
 
 
     public void NextLevel() {
-        ChangeScence(SceneManager.GetActiveScene().buildIndex + 1);
+        int next = SceneManager.GetActiveScene().buildIndex + 1;
+        if (next == 3) {
+            Application.Quit();
+        }
+        ChangeScence(next);
     }
 
 
@@ -80,7 +84,7 @@ public class GameManager : MonoBehaviour {
        yield return new WaitForSeconds(fadeTime);
         //respawn de la scene  ou Warp de valdo ?
         if (blackScreen.color.a > 0.9f) {
-            ChangeScence(Scene_Level1);
+            ChangeScence(SceneManager.GetActiveScene().buildIndex);
         }
         DeathAnim.cullingMode = AnimatorCullingMode.CullCompletely;
         DeathAnim.transform.localScale = Vector3.zero;
