@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour {
 
     public void NextLevel() {
         int next = SceneManager.GetActiveScene().buildIndex + 1;
-        if (SceneManager.GetActiveScene().buildIndex == 1) {
+        if (SceneManager.GetActiveScene().buildIndex == 2) {
             Application.Quit();
         }
         ChangeScence(next);
