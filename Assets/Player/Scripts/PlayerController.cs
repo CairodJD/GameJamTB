@@ -42,16 +42,13 @@ public class PlayerController : MonoBehaviour {
 
     private void Update() {     
         //HIDING or na
-        if (Input.GetKey(KeyCode.Mouse0)) {
+        if (Input.GetKey(KeyCode.Mouse0) || Input.GetButton("Submit")) {
 
             if (agent.enabled == true) {
-                Debug.Log(" je clique : " + IsOn(hiddenLayer));
                 if (IsOn(hiddenLayer)) {
-                    Debug.Log("hiding");
                     //Debug.Log(" je me cache / animation de creusage tu sais deja");
                     Hidding();
                 } else if (IsOn(endLayer)) {
-                    Debug.Log("next");
                     GameManager.instance.NextLevel();
                 }
                
