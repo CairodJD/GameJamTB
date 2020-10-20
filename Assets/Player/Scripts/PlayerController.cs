@@ -45,10 +45,13 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetKey(KeyCode.Mouse0)) {
 
             if (agent.enabled == true) {
+                Debug.Log(" je clique : " + IsOn(hiddenLayer));
                 if (IsOn(hiddenLayer)) {
+                    Debug.Log("hiding");
                     //Debug.Log(" je me cache / animation de creusage tu sais deja");
                     Hidding();
                 } else if (IsOn(endLayer)) {
+                    Debug.Log("next");
                     GameManager.instance.NextLevel();
                 }
                

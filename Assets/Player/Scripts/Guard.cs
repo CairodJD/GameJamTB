@@ -12,7 +12,7 @@ public class Guard : MonoBehaviour {
 
     List<Transform> waypoints = new List<Transform>();
 
-    public float range = 2f;
+    public float pointRangeSearch = 2f;
     public float waitTime = 1f;
     public LayerMask layertoCheck; // sensé etre la couche du joueur
     //spot
@@ -53,7 +53,7 @@ public class Guard : MonoBehaviour {
         }
 
         if (waypoints != null && waypoints.Count > 0) {
-            agent.Warp(RandomPoint(waypoints[0].position, range));
+            agent.Warp(RandomPoint(waypoints[0].position, pointRangeSearch));
             StartCoroutine(Patrol(waypoints));
         }
 
@@ -162,7 +162,7 @@ public class Guard : MonoBehaviour {
             //transform.LookAt(waypoints[index].position);
            
             //transform.position = Vector3.MoveTowards(transform.position, waypoints[index].position, speed * Time.deltaTime);
-            destination = RandomPoint(waypoints[index].position, range);
+            destination = RandomPoint(waypoints[index].position, pointRangeSearch);
             if (destination != Vector3.zero) {
                 agent.SetDestination(destination);
                 animator.SetBool(WALK, true);
@@ -207,7 +207,7 @@ public class Guard : MonoBehaviour {
     private void OnDrawGizmos() {
         Gizmos.color = Color.green;
         if (player) {
-            Gizmos.DrawLine(transform.position + Vector3.up, (player.transform.position - transform.position));
+            //Gizmos.DrawLine(transform.position + Vector3.up, (player.transform.position - transform.position));
             drawAnlge(spotLight.spotAngle, spotLight.range);
         }
 

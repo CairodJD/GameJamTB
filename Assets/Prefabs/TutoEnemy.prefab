@@ -89,6 +89,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2719364783211773310}
+  - component: {fileID: 4534482426105258828}
   m_Layer: 12
   m_Name: TutoEnemy
   m_TagString: Untagged
@@ -103,7 +104,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3384120251380344772}
-  m_LocalRotation: {x: 0.000000020301695, y: -0.9684464, z: -0.00000007888998, w: 0.24922194}
+  m_LocalRotation: {x: 0, y: -0.96844625, z: 0, w: 0.24922235}
   m_LocalPosition: {x: -144.289, y: 0.644, z: -5.756}
   m_LocalScale: {x: 1.5343, y: 1.5343, z: 1.5343}
   m_Children:
@@ -111,6 +112,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -151.13701, z: 0}
+--- !u!65 &4534482426105258828
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3384120251380344772}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.2, y: 1.35, z: 0.3}
+  m_Center: {x: 0, y: 0.9, z: 0}
 --- !u!1 &4833792709752919720
 GameObject:
   m_ObjectHideFlags: 0

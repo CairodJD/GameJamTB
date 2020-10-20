@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waypointsHolder: {fileID: 0}
-  range: 2
+  pointRangeSearch: 1
   waitTime: 3.5
   layertoCheck:
     serializedVersion: 2
@@ -368,6 +368,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rubix_VF
       objectReference: {fileID: 0}
+    - target: {fileID: 4818651183378066441, guid: fc262f68fcbdf3a4cb14e92791896920,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3795675ee4ea3914dad5fc64806e3d8a, type: 2}
     - target: {fileID: 5866666021909216657, guid: fc262f68fcbdf3a4cb14e92791896920,
         type: 3}
       propertyPath: m_Controller
