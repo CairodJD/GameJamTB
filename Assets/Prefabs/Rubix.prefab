@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 5905871047267658386}
   - component: {fileID: 3083073786299463161}
   - component: {fileID: 2841602046866522079}
-  - component: {fileID: 2841602046866522080}
+  - component: {fileID: 1863400818}
   m_Layer: 0
   m_Name: Rubix
   m_TagString: Untagged
@@ -213,7 +213,7 @@ AudioSource:
   Priority: 68
   DopplerLevel: 1
   MinDistance: 8.5
-  MaxDistance: 190
+  MaxDistance: 100
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -288,8 +288,8 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!135 &2841602046866522080
-SphereCollider:
+--- !u!65 &1863400818
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -299,8 +299,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.6
-  m_Center: {x: 0, y: 0.32, z: 0}
+  m_Size: {x: 0.62, y: 0.32, z: 1.18}
+  m_Center: {x: 0, y: 0.56, z: 0}
 --- !u!1001 &3740262732250836715
 PrefabInstance:
   m_ObjectHideFlags: 0

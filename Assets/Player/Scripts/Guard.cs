@@ -22,7 +22,7 @@ public class Guard : MonoBehaviour {
     GameObject player;
     NavMeshAgent agent;
     Animator animator;
-
+    bool haveSeenYou = false;
     static readonly string WALK = "WALK";
     static readonly string ISEEU = "ISEEU";
 
@@ -44,7 +44,7 @@ public class Guard : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
-        
+        haveSeenYou = false;
         player = GameObject.FindGameObjectWithTag("Player");
         spotLight = transform.GetChild(0).GetComponent<Light>();
         originalSpotColor = spotLight.color;
@@ -62,12 +62,13 @@ public class Guard : MonoBehaviour {
     // Update is called once per frame
     void Update() {
 
-        if (ISEEYOU()) {
+        if (ISEEYOU() && !haveSeenYou) {
             animator.SetTrigger(ISEEU);         
             // end GAME
             spotLight.color = Color.red;
             
             StartCoroutine(GameManager.instance.ValdoSpotted());
+            haveSeenYou = true;
         } else {
             //print("nein");
             spotLight.color = originalSpotColor;

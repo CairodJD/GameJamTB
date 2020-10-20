@@ -20,6 +20,18 @@ public class GameManager : MonoBehaviour {
     }
 
 
+    private void OnEnable() {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
+        switch (scene.buildIndex) {
+            default:
+                Sub();
+                break;
+        }
+    }
+
     private void Awake() {
         //Check if instance already exists
         if (_instance == null) {
@@ -38,6 +50,11 @@ public class GameManager : MonoBehaviour {
     }
 
     private void Start() {
+        
+    }
+
+
+    private void Sub() {
         // subscribe ton valdo contact 
         Guard[] guards = FindObjectsOfType<Guard>();
         if (guards.Length > 0) {
@@ -47,17 +64,15 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-
-
-
     private void onValdoContactWithEnemy() {
+        Debug.Log("ALOO");
         StartCoroutine(ValdoSpotted());
     }
 
 
     public void NextLevel() {
         int next = SceneManager.GetActiveScene().buildIndex + 1;
-        if (next == 3) {
+        if (SceneManager.GetActiveScene().buildIndex == 1) {
             Application.Quit();
         }
         ChangeScence(next);

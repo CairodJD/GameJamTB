@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour {
     NavMeshAgent agent;
     int defaultLayer;
     Transform skin;
+    Rigidbody rigidbody;
     private static readonly string hiddenLayer = "Dig";
     private static readonly string endLayer = "Ending";
 
@@ -24,6 +25,7 @@ public class PlayerController : MonoBehaviour {
     // 2 dril out
 
     private void Awake() {
+        //rigidbody = GetComponent<Rigidbody>();
         source = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
         controller = GetComponent<CharacterController>();
@@ -100,12 +102,12 @@ public class PlayerController : MonoBehaviour {
 
     void Hidding() {
         Dig();
-       
+        controller.detectCollisions = false;
         gameObject.layer = (1 << NavMesh.GetAreaFromName(hiddenLayer));
     }
     void NotHidding() {
         Dig(false);
-       
+        controller.detectCollisions = true;
         gameObject.layer = defaultLayer;
     }
 
