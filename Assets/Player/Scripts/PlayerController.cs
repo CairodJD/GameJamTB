@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.AI;
 using System;
 using Cinemachine;
@@ -16,6 +17,7 @@ public class PlayerController : MonoBehaviour {
     public float movespeed = 3.5f;
     public float turnSmoothTime = 0.1f;
     public float rotationSpeed = 0.5f;
+    public float restartHoldTime = 3;
     float turnSmoothVelocity;
     CharacterController controller;
     NavMeshAgent agent;
@@ -58,7 +60,24 @@ public class PlayerController : MonoBehaviour {
         Cursor.lockState = CursorLockMode.Confined;
     }
 
-    private void Update() {     
+    float restartTimer;
+    private void Update() {
+
+        //reqtart
+        if (Input.GetKey(KeyCode.R) ) {
+            //Debug.Log(restartHoldTime / Time.deltaTime);
+            restartTimer += Time.deltaTime;
+            //Debug.Log(((int)(timer % 60)) / restartHoldTime);
+            float tkt = ((int)(restartTimer % 60)) / restartHoldTime;
+            
+            if (tkt > 0.999) {
+                StartCoroutine(GameManager.instance.ValdoSpotted());
+            }
+        } else {
+            restartTimer = 0;
+
+        }
+
         //HIDING or na
         if (Input.GetKey(KeyCode.Mouse0) || Input.GetButton("Submit")) {
 
@@ -85,6 +104,11 @@ public class PlayerController : MonoBehaviour {
 
 
     #region Gameplay
+
+    IEnumerator RestartLevel() {
+        yield return new WaitForSeconds(restartHoldTime);
+        GameManager.instance.ValdoSpotted();
+    }
 
     void Moovement() {
         float horizontal = Input.GetAxisRaw("Horizontal");

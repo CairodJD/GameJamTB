@@ -16,8 +16,8 @@ RenderSettings:
   serializedVersion: 9
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  m_FogMode: 3
-  m_FogDensity: 0.01
+  m_FogMode: 2
+  m_FogDensity: 0.1
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.8018868, g: 0.41162348, b: 0.2988163, a: 1}
@@ -30,7 +30,7 @@ RenderSettings:
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
-  m_HaloTexture: {fileID: 0}
+  m_HaloTexture: {fileID: 2800000, guid: 6fb7b8f6e9495b049b6f0a00985776bd, type: 3}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
   m_DefaultReflectionMode: 0
   m_DefaultReflectionResolution: 32
@@ -179,6 +179,10 @@ PrefabInstance:
     - target: {fileID: 11900000, guid: 21543d2b66928224f8a9536ff3811682, type: 3}
       propertyPath: m_IgnoreLayers.m_Bits
       value: 17408
+      objectReference: {fileID: 0}
+    - target: {fileID: 11900000, guid: 21543d2b66928224f8a9536ff3811682, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21543d2b66928224f8a9536ff3811682, type: 3}
@@ -1211,7 +1215,7 @@ PrefabInstance:
     - target: {fileID: 6285657866522482482, guid: 7762917806eaf6648b97b25801f42098,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6285657866522482484, guid: 7762917806eaf6648b97b25801f42098,
         type: 3}
@@ -1998,7 +2002,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1754649041}
-  m_LocalRotation: {x: 0.17830549, y: -0.12579012, z: 0.022989303, w: 0.9756309}
+  m_LocalRotation: {x: 0.17791723, y: -0.14129426, z: 0.025822837, w: 0.97350633}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2721,8 +2725,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2097143663}
-  m_LocalRotation: {x: 0.17849295, y: -0.1175631, z: 0.021485731, w: 0.9766563}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.17147477, y: -0.13039356, z: 0.0229031, w: 0.97625273}
+  m_LocalPosition: {x: -0.004922867, y: -0.022510052, z: -0.04067993}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2024877450}
@@ -6122,6 +6126,7 @@ MonoBehaviour:
   movespeed: 2
   turnSmoothTime: 0.1
   rotationSpeed: 0.5
+  restartHoldTime: 3
   cailloux: {fileID: 0}
   shakeTime: 0.5
   clips:
