@@ -96,7 +96,7 @@ Material:
     - _UseRoughnessMap: 1
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.26521894, g: 0.37643194, b: 0.3773585, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0.28598425, g: 0.12545535, b: 0.12545535, a: 1}
     - _ReflectColor: {r: 1, g: 1, b: 1, a: 0.5}
     - _SpecColor: {r: 1, g: 0.4575472, b: 0.4575472, a: 1}
