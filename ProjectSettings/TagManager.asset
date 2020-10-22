@@ -6,6 +6,9 @@ TagManager:
   tags:
   - BlackScreen
   - DeathAnim
+  - LoadingScreen
+  - BackgroundMenu
+  - Menu
   layers:
   - Default
   - TransparentFX

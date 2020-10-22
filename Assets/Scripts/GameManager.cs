@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    private GameObject nextLevelLoadingGO;
 
     private void OnEnable() {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -26,6 +27,15 @@ public class GameManager : MonoBehaviour {
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
         switch (scene.buildIndex) {
+            case 0:
+                background = GameObject.FindGameObjectWithTag("BackgroundMenu").GetComponent<Image>();
+                loading = GameObject.FindGameObjectWithTag("LoadingScreen").GetComponent<Animator>();
+                menu = GameObject.FindGameObjectWithTag("Menu");
+                break;
+            case 1:  case 2:  case 3:
+                nextLevelLoadingGO = GameObject.FindGameObjectWithTag("LoadingScreen");
+                nextLevelLoadingGO.SetActive(false);
+                break;
             default:
                 Sub();
                 break;
@@ -49,10 +59,31 @@ public class GameManager : MonoBehaviour {
 
     }
 
-    private void Start() {
-        
+
+    public void Play() {
+
+        StartCoroutine(LoadAsync(1));
+
     }
 
+    private Image background;
+    private Animator loading;
+    private GameObject menu;
+    IEnumerator LoadAsync(int sceneIndex) {
+        AsyncOperation op = SceneManager.LoadSceneAsync(sceneIndex);
+        menu.SetActive(false);
+        loading.GetComponent<Image>().enabled = true;
+        loading.cullingMode = AnimatorCullingMode.AlwaysAnimate;
+        
+        background.gameObject.SetActive(false);
+
+
+        while (!op.isDone) {
+            //float progress = Mathf.Clamp01(op.progress / .9f);
+
+            yield return null;
+        }
+    }
 
     private void Sub() {
         // subscribe ton valdo contact 
@@ -72,10 +103,13 @@ public class GameManager : MonoBehaviour {
 
     public void NextLevel() {
         int next = SceneManager.GetActiveScene().buildIndex + 1;
-        if (SceneManager.GetActiveScene().buildIndex == 2) {
+        if (SceneManager.GetActiveScene().buildIndex == 3) {
             Application.Quit();
         }
-        ChangeScence(next);
+
+        nextLevelLoadingGO.transform.localScale = Vector3.one;
+
+        SceneManager.LoadSceneAsync(next);
     }
 
 
@@ -111,5 +145,6 @@ public class GameManager : MonoBehaviour {
         SceneManager.LoadScene(sceneID);
     }
 
+    
 
 }
