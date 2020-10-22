@@ -3,8 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using System;
+using Cinemachine;
 
 public class PlayerController : MonoBehaviour {
+
+    #region variables
+
+    
+
 
     public Transform Cam;
     public float movespeed = 3.5f;
@@ -17,6 +23,7 @@ public class PlayerController : MonoBehaviour {
     Transform skin;
     Rigidbody rigidbody;
     public ParticleSystem cailloux;
+    public float shakeTime =0.5f;
     private static readonly string hiddenLayer = "Dig";
     private static readonly string endLayer = "Ending";
 
@@ -25,8 +32,17 @@ public class PlayerController : MonoBehaviour {
     // 1 dril
     // 2 dril out
 
+    CinemachineFreeLook cinemachineCam;
+    CinemachineBasicMultiChannelPerlin noiseTop;
+    CinemachineBasicMultiChannelPerlin noiseMid;
+    #endregion
+
+
     private void Awake() {
         //rigidbody = GetComponent<Rigidbody>();
+        cinemachineCam = transform.GetComponentInChildren<CinemachineFreeLook>();
+        noiseTop = cinemachineCam.GetRig(0).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+        noiseMid = cinemachineCam.GetRig(1).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
         cailloux = cailloux == null ? transform.GetComponentInChildren<ParticleSystem>() : cailloux;
         source = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
@@ -67,6 +83,8 @@ public class PlayerController : MonoBehaviour {
        
     }
 
+
+    #region Gameplay
 
     void Moovement() {
         float horizontal = Input.GetAxisRaw("Horizontal");
@@ -112,8 +130,8 @@ public class PlayerController : MonoBehaviour {
         controller.detectCollisions = true;
         gameObject.layer = defaultLayer;
     }
+    #endregion
 
-    
     #region AnimationControler
 
     Animator animator;
@@ -121,6 +139,7 @@ public class PlayerController : MonoBehaviour {
     static readonly string DIG   = "DIG";
     static readonly string SPROUT = "SPROUT";
     public float trans = 3f;
+
 
 
     public void caillouxEvent() {
@@ -134,7 +153,22 @@ public class PlayerController : MonoBehaviour {
     public void DigRendererEvent(int tkt) {
         skin.gameObject.SetActive(Convert.ToBoolean(tkt));
     }
+    
+    public void ShakeEvent() {
+       
+        StartCoroutine(shake(shakeTime));
+    }
 
+    IEnumerator shake(float timing) {
+        noiseTop.m_FrequencyGain = 1;
+        noiseMid.m_FrequencyGain = 1;
+        Debug.Log("set 1 : " + noiseMid.m_FrequencyGain);
+        yield return new WaitForSeconds(timing);
+       
+        noiseTop.m_FrequencyGain = 0;
+        noiseMid.m_FrequencyGain = 0;
+        Debug.Log("set 0 :" + noiseTop.m_FrequencyGain);
+    }
 
     void Walk(float speed) {
         animator.SetFloat(WALK, speed);

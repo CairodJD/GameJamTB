@@ -59,6 +59,14 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
+      - time: 0.6342857
+        functionName: ShakeEvent
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: f2078f8b7b7d5d04fb19263ee42dbaef,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       - time: 0.63559324
         functionName: caillouxEvent
         data: 
