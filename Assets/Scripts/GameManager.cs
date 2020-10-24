@@ -96,7 +96,6 @@ public class GameManager : MonoBehaviour {
     }
 
     private void onValdoContactWithEnemy() {
-        Debug.Log("ALOO");
         StartCoroutine(ValdoSpotted());
     }
 
@@ -104,7 +103,7 @@ public class GameManager : MonoBehaviour {
     public void NextLevel() {
         int next = SceneManager.GetActiveScene().buildIndex + 1;
         if (SceneManager.GetActiveScene().buildIndex == 3) {
-            Application.Quit();
+            next = 0;
         }
 
         nextLevelLoadingGO.transform.localScale = Vector3.one;

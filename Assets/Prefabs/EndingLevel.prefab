@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 6285657866522482484}
   m_LocalRotation: {x: -0.043065034, y: 0.049487956, z: 0.02893869, w: 0.99742615}
   m_LocalPosition: {x: -332.3, y: 158.6, z: 892.04}
-  m_LocalScale: {x: 0.72896093, y: 0.7289609, z: 0.6100001}
+  m_LocalScale: {x: 0.77664673, y: 0.7766466, z: 0.6499039}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -84,8 +84,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Size: {x: 9.7, y: 2, z: 8.37}
-  m_Center: {x: 1.35, y: 0, z: 0}
+  m_Size: {x: 9.7, y: 2, z: 15.74}
+  m_Center: {x: 1.35, y: 0, z: 0.06}
   m_Area: 31
   m_AffectedAgents: 00000000
 --- !u!33 &8774338482155122174
